@@ -11,6 +11,14 @@ import CTA from '../components/cta.astro'
 import coverSVG from '../assets/svg/undraw/undraw_design_inspiration.svg'
 import socialImage from '../assets/undraw/undraw_design_inspiration.png'
 
+import fetchApi from '../lib/strapi';
+import type Post from '../interfaces/post';
+
+const posts_api = await fetchApi<Post[]>({
+  endpoint: 'posts?populate=cover', // the content type to fetch
+  wrappedByKey: 'data', // the key to unwrap the response
+});
+
 const frontmatter: Frontmatter = {
   title: SiteMetadata.title,
   description: SiteMetadata.description,
