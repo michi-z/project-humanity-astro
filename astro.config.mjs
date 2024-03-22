@@ -6,8 +6,7 @@ import alpinejs from '@astrojs/alpinejs';
 import robotsTxt from 'astro-robots-txt';
 import remarkMath from 'remark-math';
 import remarkEmoji from 'remark-emoji';
-import rehypeKatex from 'rehype-katex';
-import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
+import rehypeKatex from 'rehype-katex'; import remarkPlantUML from '@akebifiky/remark-simple-plantuml';
 import { remarkReadingTime } from './remark-plugins/remark-reading-time.mjs';
 import { remarkDiagram } from './remark-plugins/remark-diagram.mjs';
 import icon from "astro-icon";
@@ -23,7 +22,7 @@ export default defineConfig({
     }
   },
   site: 'https://hellotham.github.io',
-  base: '/hello-astro/',
+  base: '/',
   integrations: [icon(), tailwind(), sitemap(), mdx(), alpinejs(), robotsTxt(), markdoc()],
   markdown: {
     extendDefaultPlugins: true,
